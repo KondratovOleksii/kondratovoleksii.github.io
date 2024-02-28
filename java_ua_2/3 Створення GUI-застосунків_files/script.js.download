@@ -1,0 +1,77 @@
+$(document).ready(function () {
+    $('.disa').click(function (e) {
+        e.preventDefault();
+    })
+    // Add smooth scrolling to all links in navbar + footer link
+    $("a[href='#top']").on('click', function (event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+
+            // Prevent default anchor click behavior
+            event.preventDefault();
+
+            // Store hash
+            var hash = this.hash;
+
+            // Using jQuery's animate() method to add smooth page scroll
+            // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 900, function () {
+
+                // Add hash (#) to URL when done scrolling (default click behavior)
+                window.location.hash = hash;
+            });
+        } // End if
+    });
+    var offset = 200;
+    var duration = 300;
+    $('#up').fadeOut(0);
+    $(window).scroll(function () {
+        var winTop = $(window).scrollTop();
+        if (winTop > offset) {
+            $('#up').css("opacity", "0.8");
+            $('#up').fadeIn(duration);
+        } else {
+            $('#up').fadeOut(duration);
+        }
+    });
+    $("a[href*='#']").on('click', function (event) {
+        if (this.hash !== "") {
+            var hash = this.hash;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top
+            }, 900, function () {
+                window.location.hash = hash;
+            });
+        }
+    });
+    setUp();
+    $(window).resize(function () {
+        setUp();
+    });
+})
+
+function setUp() {
+    if (window.innerWidth > 914 && window.innerHeight > 200) {
+        $("body").css('overflow-y', 'hidden');
+        let footerHeight = $('footer').innerHeight();
+        let headerHeight = $('#header').innerHeight();
+        let navbarHeight = $('.navbar').innerHeight();
+        console.log(footerHeight, headerHeight, navbarHeight);
+        $('#header').css({'position':'fixed', 'width': '100%', 'top': '0',  'z-index': '9999'});
+        $('.navbar').css({'top': headerHeight + 1, 'position':'fixed', 'width': '100%', 'z-index': '9999'});
+        $('#main').css("padding-top", headerHeight + navbarHeight + 1);
+        $('#content').css("height", $(window).height() - (headerHeight + navbarHeight + footerHeight + 1));
+        $('.sidenav').css("height", $(window).height() - (headerHeight + navbarHeight + footerHeight + 1));
+
+    } else {
+        $("body").css('overflow-y', 'auto');
+        $('#header').css('position', 'static');
+        $('.navbar').css('position', 'static');
+        $('.sidenav').css("height", 'auto');
+        $('#content').css("height", 'auto');
+        $('#main').css("padding-top", 0);
+    }
+}
