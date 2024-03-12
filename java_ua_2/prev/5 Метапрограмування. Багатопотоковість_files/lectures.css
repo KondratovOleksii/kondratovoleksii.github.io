@@ -1,0 +1,182 @@
+
+        body {
+            background: #dfdfdf;
+            /*overflow-y: hidden;*/
+        }
+
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .jumbotron {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        #header {
+            background-color: #445566;
+            /*height: 125px;*/
+            /*position: fixed;*/
+            /*width: 100%;*/
+            /*top: 0;*/
+            /*z-index: 9999;*/
+        }
+
+        #header h2, #header h4, #header h3, #header h5, #header p {
+            margin-left: -10px;
+            color: #ededed;
+        }
+
+        #header h2 {
+            font-weight: bold;
+        }
+
+        #header h4 {
+            font-size: 1.5em;
+        }
+
+        #content {
+            background: white;
+            padding-right: 9%;
+            box-sizing: border-box;
+            overflow-y: auto;
+            /*height: calc(100vh - 226px);*/
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        ul.nav, ul.side_menu {
+            list-style-type: none;
+            margin-left: -20px;
+        }
+
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+            /*height: 51px;*/
+            /*position: fixed;
+            top: 125px;
+            width: 100%;
+            z-index: 9999;*/
+        }
+
+        .navbar-inverse {
+            background-color: #445566;
+            border: none;
+            border-top: 1px solid white;
+        }
+
+        .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > li > a:hover {
+            background-color: #293b4c;
+        }
+
+        #main {
+            /*padding-top: 176px;*/
+        }
+
+        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+        .row.content {
+            height: 450px
+        }
+
+        /* Set gray background color and 100% height */
+        .sidenav {
+            padding-top: 20px;
+            /*height: calc(100vh - 226px);*/
+            overflow-y: auto;
+        }
+
+        .btn-info {
+            color: #fff;
+            background-color: #445566;
+            border: none;
+            border-radius: 0;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        .btn-info:hover {
+            background-color: #293b4c;
+        }
+
+        .navbar-inverse .navbar-toggle:hover{
+            background-color: #293b4c;
+        }
+
+        .hide{
+            visibility: hidden;
+        }
+        .disa{
+            cursor: default;
+            opacity: 0.6;
+
+        }
+
+        .disa:hover{
+            background-color: #445566;
+        }
+        /* Set black background color, white text and some padding */
+        footer {
+            background-color: #293b4c;
+            color: white;
+            padding: 5px;
+            /*height: 50px;*/
+        }
+        footer p {
+            margin: 0;
+        }
+        tt {
+            color: #446699;
+        }
+
+        #up{
+            color: #fff;
+            position: fixed;
+            display: block;
+            background: #293b4c;
+            width: 40px;
+            height: 40px;
+            bottom: 64px;
+            right: 30px;
+            opacity: 0;
+            border-radius: 50%;
+            padding-left:12px;
+            padding-top: 8px;
+            box-sizing: border-box;
+        }
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 990px) {
+            #content {
+                padding-right: 10px;
+            }
+            #up {
+                display: none !important;
+            }
+        }
+
+        /* On small screens, set height to 'auto' for sidenav and grid */
+        @media screen and (max-width: 768px) {
+            .sidenav {
+                height: auto;
+                padding: 15px;
+            }
+
+            .row.content {
+                height: auto;
+            }
+        }
+
+        @media only screen and (max-width: 600px) {
+            img.small_img {
+                width: 40%;
+                height: auto;
+            }
+
+            img.big_img {
+                width: 90%;
+                height: auto;
+            }
+        }
